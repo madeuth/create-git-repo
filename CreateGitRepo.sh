@@ -4,8 +4,8 @@
 REPO=
 NAME=
 EMAIL=
-URL=
 HOST=
+URL=
 
 #----------------------------------Functions-----------------------------------#
 display_command_error() {
@@ -34,14 +34,14 @@ do
     fi
 done
 
-# Create local repository
+# Create local repo
 mkdir $REPO
 cd $REPO
 echo "# $REPO" >> README.md
 git init
 git add README.md
 
-# Get username
+# Get user name
 while : ;
 do
     echo -n "What is your git username? "
@@ -75,7 +75,7 @@ git config --local user.email $EMAIL
 git commit -m "first commit"
 git branch -M main
 
-# Get remote
+# Get host
 while : ;
 do
     echo "What is your git host provider?"
@@ -96,7 +96,7 @@ do
     esac
 done
 
-# Get remote
+# Build remote
 while : ;
 do
     echo "What mode would you like to use to push to remote?"
@@ -120,7 +120,7 @@ done
 # Add remote
 git remote add origin $URL
 
-# Push to remote
+# Push
 git push -u origin main
 echo "Successfully pushed to git repo!"
 
